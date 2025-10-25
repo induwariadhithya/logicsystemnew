@@ -205,7 +205,7 @@ public class LogisticSystemNew {
         }
         
         
-        /*//calculations
+        //calculations
         double cost = dist * ratePerKm[v] * (1 + (w / 10000.0));
         double time = dist / avgSpeed[v];
         double fuelUsed = dist / efficiency[v];
