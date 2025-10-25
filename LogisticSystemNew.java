@@ -220,7 +220,7 @@ public class LogisticSystemNew {
         
         
         
-        //save delivery record
+       //save delivery record
         if (deliveryCount < MAX_DELIVERIES) {
             fromCity[deliveryCount] = cities[src];
             toCity[deliveryCount] = cities[dest];
@@ -234,7 +234,7 @@ public class LogisticSystemNew {
         }
         
         
-        //print result
+        /*//print result
         System.out.println("\n==== DELIVERY COST ESTIMATION ====");
         System.out.println("From: " + cities[src] + " To: " + cities[dest]);
         System.out.println("Vehicle: " + vehicleNames[v]);
