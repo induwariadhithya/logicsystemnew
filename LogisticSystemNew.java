@@ -247,6 +247,38 @@ public class LogisticSystemNew {
         System.out.printf("Estimated Time: %.2f hours%n", time);
     }
      
+    
+    //method to show performance report
+    static void showReport() {
+        if (deliveryCount == 0) {
+            System.out.println("No deliveries yet!");
+            return;
+        }
+        double totalDist = 0, totalTime = 0;
+        double[] distanceCovered = null;
+        double maxDist = distanceCovered[0];
+        double minDist = distanceCovered[0];
+        String longRoute = fromCity[0] + "→" + toCity[0];
+        String shortRoute = fromCity[0] + "→" + toCity[0];
+
+        for (int i = 0; i < deliveryCount; i++) {
+            totalDist += distanceCovered[i];
+           
+            if (distanceCovered[i] > maxDist) {
+                maxDist = distanceCovered[i];
+                longRoute = fromCity[i] + "→" + toCity[i];
+            }
+            if (distanceCovered[i] < minDist) {
+                minDist = distanceCovered[i];
+                shortRoute = fromCity[i] + "→" + toCity[i];
+            }
+        }
+        
+        
+        
+        double avgTime = totalTime / deliveryCount;
+        
+    }
      
     
     
