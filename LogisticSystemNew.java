@@ -17,6 +17,26 @@ public class LogisticSystemNew {
     static final int MAX_DELIVERIES = 50;
     static final double FUEL_PRICE = 310.0;
     
+    // Arrays for storing city names and distance table
+    static String[] cities = new String[MAX_CITIES];
+    static int cityCount = 0;
+    static int[][] distance = new int[MAX_CITIES][MAX_CITIES];
+    
+    // Vehicle details stored in arrays
+    static String[] vehicleNames = {"Van", "Truck", "Lorry"};
+    static int[] vehicleCapacity = {1000, 5000, 10000};
+    static double[] ratePerKm = {30, 40, 80};
+    static double[] avgSpeed = {60, 50, 45};
+    static double[] efficiency = {12, 6, 4};
+    
+    // Arrays to record delivery information
+    static String[] fromCity = new String[MAX_DELIVERIES];
+    static String[] toCity = new String[MAX_DELIVERIES];
+    
+    
+    static int deliveryCount = 0;
+    static double totalRevenue = 0;
+    static double totalProfit = 0;
 
    
     public static void main(String[] args) {
