@@ -162,6 +162,90 @@ public class LogisticSystemNew {
             System.out.println();
         }
     }
+    
+    
+    //method to make delivery and calculate cost
+    
+    
+    static void makeDelivery() {
+        if (cityCount < 2) {
+            System.out.println("No cities available!");
+            return;
+        }
+        showCities();
+        System.out.print("Source city index: ");
+        int src = sc.nextInt();
+        System.out.print("Destination city index: ");
+        int dest = sc.nextInt();
+
+        if (src == dest) {
+            System.out.println("Invalid! Source and destination cannot be same.");
+            return;
+        }
+
+        int dist = distance[src][dest];
+        if (dist == 0) {
+            System.out.println("Distance not set between these cities!");
+            return;
+        }
+        
+       /* //choose vehicle type
+        System.out.println("Select Vehicle: 1.Van 2.Truck 3.Lorry");
+        int v = sc.nextInt() - 1;
+        System.out.print("Enter weight (kg): ");
+        int w = sc.nextInt();
+        
+        
+        
+        
+        // check if weight exceeds capacity
+        if (w > vehicleCapacity[v]) {
+            System.out.println("Weight exceeds vehicle capacity!");
+            return;
+        }
+        
+        
+        //calculations
+        double cost = dist * ratePerKm[v] * (1 + (w / 10000.0));
+        double time = dist / avgSpeed[v];
+        double fuelUsed = dist / efficiency[v];
+        double fuelCost = fuelUsed * FUEL_PRICE;
+        double totalCost = cost + fuelCost;
+        double profit = cost * 0.25;
+        double chargeAmount = totalCost + profit;
+
+        totalRevenue += chargeAmount;
+        totalProfit += profit;
+
+        
+        
+        
+        //save delivery record
+        if (deliveryCount < MAX_DELIVERIES) {
+            fromCity[deliveryCount] = cities[src];
+            toCity[deliveryCount] = cities[dest];
+            int[] distanceCovered = null;
+            distanceCovered[deliveryCount] = dist;
+            double[] deliveryTime = null;
+            deliveryTime[deliveryCount] = time;
+            double[] charge = null;
+            charge[deliveryCount] = chargeAmount;
+            deliveryCount++;
+        }
+        
+        
+        //print result
+        System.out.println("\n==== DELIVERY COST ESTIMATION ====");
+        System.out.println("From: " + cities[src] + " To: " + cities[dest]);
+        System.out.println("Vehicle: " + vehicleNames[v]);
+        System.out.println("Distance: " + dist + " km");
+        System.out.printf("Base Cost: %.2f LKR%n", cost);
+        System.out.printf("Fuel Cost: %.2f LKR%n", fuelCost);
+        System.out.printf("Total Cost: %.2f LKR%n", totalCost);
+        System.out.printf("Profit: %.2f LKR%n", profit);
+        System.out.printf("Customer Charge: %.2f LKR%n", chargeAmount);
+        System.out.printf("Estimated Time: %.2f hours%n", time);
+    }
      
      
     
