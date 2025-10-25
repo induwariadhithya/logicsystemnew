@@ -335,7 +335,40 @@ public class LogisticSystemNew {
     }
     
     
-    
+    static void loadData() {
+        try 
+            // Load city data
+            (Scanner file = new Scanner(new File("routes.txt"))) {
+            cityCount = file.nextInt();
+            file.nextLine();
+            for (int i = 0; i < cityCount; i++) cities[i] = file.nextLine();
+            for (int i = 0; i < cityCount; i++)
+                for (int j = 0; j < cityCount; j++) distance[i][j] = file.nextInt();
+        } catch (Exception e) {
+            System.out.println("No existing city data found.");
+        }
+
+        try 
+            // Load delivery data
+            (Scanner file = new Scanner(new File("deliveries.txt"))) {
+            deliveryCount = file.nextInt();
+            file.nextLine();
+            for (int i = 0; i < deliveryCount; i++) {
+                String[] p = file.nextLine().split(",");
+                fromCity[i] = p[0];
+                toCity[i] = p[1];
+                double[] distanceCovered = null;
+                distanceCovered[i] = Double.parseDouble(p[2]);
+                double[] deliveryTime = null;
+                deliveryTime[i] = Double.parseDouble(p[3]);
+                double[] charge = null;
+                charge[i] = Double.parseDouble(p[4]);
+                totalRevenue += charge[i];
+            }
+        } catch (Exception e) {
+            System.out.println("No previous delivery records found.");
+        }
+    }
     
      
     
