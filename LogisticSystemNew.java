@@ -189,7 +189,7 @@ public class LogisticSystemNew {
             return;
         }
         
-       /* //choose vehicle type
+        //choose vehicle type
         System.out.println("Select Vehicle: 1.Van 2.Truck 3.Lorry");
         int v = sc.nextInt() - 1;
         System.out.print("Enter weight (kg): ");
@@ -198,7 +198,7 @@ public class LogisticSystemNew {
         
         
         
-        // check if weight exceeds capacity
+       /* // check if weight exceeds capacity
         if (w > vehicleCapacity[v]) {
             System.out.println("Weight exceeds vehicle capacity!");
             return;
