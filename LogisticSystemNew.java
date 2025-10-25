@@ -293,6 +293,50 @@ public class LogisticSystemNew {
         
         
     }
+    
+    
+    
+    
+    
+    
+    
+    // method to Save data to text files
+    static void saveData() {
+        
+     
+        try 
+            // Save city list and distance matrix
+            (PrintWriter pw = new PrintWriter(new FileWriter("routes.txt"))) {
+            pw.println(cityCount);
+            for (int i = 0; i < cityCount; i++) pw.println(cities[i]);
+            for (int i = 0; i < cityCount; i++) {
+                for (int j = 0; j < cityCount; j++) pw.print(distance[i][j] + " ");
+                pw.println();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving routes!");
+        }
+        
+        
+        
+        // Save delivery details to a file
+        try (PrintWriter pw = new PrintWriter(new FileWriter("deliveries.txt"))) {
+            pw.println(deliveryCount);
+            for (int i = 0; i < deliveryCount; i++) {
+                boolean[] charge = null;
+                String[] distanceCovered = null;
+                String[] deliveryTime = null;
+                pw.println(fromCity[i] + "," + toCity[i] + "," + distanceCovered[i] + "," +
+                           deliveryTime[i] + "," + charge[i]);
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving data!");
+        }
+    }
+    
+    
+    
+    
      
     
     
