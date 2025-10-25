@@ -38,11 +38,33 @@ public class LogisticSystemNew {
     static double totalRevenue = 0;
     static double totalProfit = 0;
 
-   static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
    
     public static void main(String[] args) {
     
         
     }
+    // method to Add a new city
+    static void addCity(){
+        if(cityCount >= MAX_CITIES){
+            System.out.println("City list full!");
+            return;
+            
+        }
+        System.out.print("Enter city name: ");
+        String name = sc.next();
+        for (int i = 0; i < cityCount; i++) {
+            if (cities[i].equalsIgnoreCase(name)) {
+                System.out.println("City already exists!");
+                return;
+            }
+            
+        }         
+        cities[cityCount++] = name;
+        System.out.println("City added successfully!");
+        
+        
+    }
+     
     
 }
