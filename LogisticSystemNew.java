@@ -67,4 +67,29 @@ public class LogisticSystemNew {
     }
      
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // method to Show list of cities
+    static void showCities() {
+        System.out.println("\nCities:");
+        for (int i = 0; i < cityCount; i++) {
+            System.out.println(i + " - " + cities[i]);
+        }
+    }
+    
 }
