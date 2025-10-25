@@ -68,22 +68,7 @@ public class LogisticSystemNew {
      
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     // method to Show list of cities
     static void showCities() {
         System.out.println("\nCities:");
@@ -91,5 +76,47 @@ public class LogisticSystemNew {
             System.out.println(i + " - " + cities[i]);
         }
     }
+    
+    
+     static void renameOrRemoveCity() {
+        if (cityCount == 0) {
+            System.out.println("No cities available!");
+            return;
+        }
+      
+        showCities();
+        System.out.println("1. Rename City");
+        System.out.println("2. Remove City");
+        System.out.print("Enter choice: ");
+        int ch = sc.nextInt();
+        System.out.print("Enter city index: ");
+        int i = sc.nextInt();
+
+        if (i < 0 || i >= cityCount) {
+            System.out.println("Invalid index!");
+            return;
+        }
+        if (ch == 1) {
+            System.out.print("Enter new name: ");
+            String newName = sc.next();
+            cities[i] = newName;
+            System.out.println("City renamed!");
+        } else if (ch == 2) {
+            for (int j = i; j < cityCount - 1; j++) {
+                cities[j] = cities[j + 1];
+                distance[j] = distance[j + 1];
+                for (int k = 0; k < cityCount; k++) {
+                    distance[k][j] = distance[k][j + 1];
+                }
+            }
+            cityCount--;
+            System.out.println("City removed!");
+        } else {
+            System.out.println("Invalid option!");
+        }
+    }
+    
+    
+    
     
 }
