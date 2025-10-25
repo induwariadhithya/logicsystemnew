@@ -38,6 +38,7 @@ public class LogisticSystemNew {
     static double totalRevenue = 0;
     static double totalProfit = 0;
 
+   static Scanner sc = new Scanner(System.in);
    
     public static void main(String[] args) {
     
