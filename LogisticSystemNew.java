@@ -278,6 +278,20 @@ public class LogisticSystemNew {
         
         double avgTime = totalTime / deliveryCount;
         
+        
+        
+        //print report
+        System.out.println("\n==== PERFORMANCE REPORT ====");
+        System.out.println("Total Deliveries: " + deliveryCount);
+        System.out.printf("Total Distance Covered: %.2f km%n", totalDist);
+        System.out.printf("Average Delivery Time: %.2f hours%n", avgTime);
+        System.out.printf("Total Revenue: %.2f LKR%n", totalRevenue);
+        System.out.printf("Total Profit: %.2f LKR%n", totalProfit);
+        System.out.println("Longest Route: " + longRoute + " (" + maxDist + " km)");
+        System.out.println("Shortest Route: " + shortRoute + " (" + minDist + " km)");
+        
+        
+        
     }
      
     
