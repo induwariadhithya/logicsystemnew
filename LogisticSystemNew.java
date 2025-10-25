@@ -115,6 +115,32 @@ public class LogisticSystemNew {
             System.out.println("Invalid option!");
         }
     }
+     
+     
+     // method to Edit distance between two cities
+    static void editDistance() {
+        if (cityCount < 2) {
+            System.out.println("Add at least 2 cities first.");
+            return;
+        }
+        showCities();
+        System.out.print("Enter source city index: ");
+        int i = sc.nextInt();
+        System.out.print("Enter destination city index: ");
+        int j = sc.nextInt();
+
+        if (i == j) {
+            System.out.println("Same city — distance = 0");
+            return;
+        }
+        System.out.print("Enter distance (km): ");
+        int d = sc.nextInt();
+        distance[i][j] = d;
+        distance[j][i] = d;
+        System.out.println("Distance updated successfully!");
+    }
+     
+     
     
     
     
