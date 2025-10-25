@@ -41,6 +41,41 @@ public class LogisticSystemNew {
     static Scanner sc = new Scanner(System.in);
    
     public static void main(String[] args) {
+        loadData();
+        int choice;
+        
+        // Repeat until user chooses to exit
+        do {
+            System.out.println("\n=== LOGISTICS MANAGEMENT SYSTEM ===");
+            System.out.println("1. Add City");
+            System.out.println("2. Rename/Remove City");
+            System.out.println("3. Edit Distance");
+            System.out.println("4. Show Distance Table");
+            System.out.println("5. Make Delivery");
+            System.out.println("6. Show Report");
+            System.out.println("0. Exit");
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+        
+            switch (choice) {
+                case 1 -> addCity();
+                case 2 -> renameOrRemoveCity();
+                case 3 -> editDistance();
+                case 4 -> showDistanceTable();
+                case 5 -> makeDelivery();
+                case 6 -> showReport();
+                case 0 -> {
+                    saveData(); // save all data before exit
+                    System.out.println("Data saved.");
+                }
+                default -> System.out.println("Invalid choice!");
+            }
+        } while (choice != 0);// loop again if not exiting
+        
+        
+        
+        
+        
     
         
     }
@@ -295,11 +330,6 @@ public class LogisticSystemNew {
     }
     
     
-    
-    
-    
-    
-    
     // method to Save data to text files
     static void saveData() {
         
@@ -316,10 +346,7 @@ public class LogisticSystemNew {
         } catch (IOException e) {
             System.out.println("Error saving routes!");
         }
-        
-        
-        
-        // Save delivery details to a file
+         // Save delivery details to a file
         try (PrintWriter pw = new PrintWriter(new FileWriter("deliveries.txt"))) {
             pw.println(deliveryCount);
             for (int i = 0; i < deliveryCount; i++) {
@@ -335,7 +362,10 @@ public class LogisticSystemNew {
     }
     
     
-    static void loadData() {
+    
+        
+        
+        static void loadData() {
         try 
             // Load city data
             (Scanner file = new Scanner(new File("routes.txt"))) {
@@ -369,6 +399,11 @@ public class LogisticSystemNew {
             System.out.println("No previous delivery records found.");
         }
     }
+    
+    
+    
+    
+    
     
      
     
