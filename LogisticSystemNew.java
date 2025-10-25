@@ -139,6 +139,29 @@ public class LogisticSystemNew {
         distance[j][i] = d;
         System.out.println("Distance updated successfully!");
     }
+    
+    
+    // method to Show the distance table
+    
+    static void showDistanceTable() {
+        
+        
+        if (cityCount < 2) {
+            System.out.println("Not enough cities!");
+            return;
+        }
+        System.out.println("\n=== DISTANCE TABLE (km) ===");
+        System.out.print("       ");
+        for (int i = 0; i < cityCount; i++) System.out.printf("%10s", cities[i]);
+        System.out.println();
+        for (int i = 0; i < cityCount; i++) {
+            System.out.printf("%10s", cities[i]);
+            for (int j = 0; j < cityCount; j++) {
+                System.out.printf("%10d", distance[i][j]);
+            }
+            System.out.println();
+        }
+    }
      
      
     
