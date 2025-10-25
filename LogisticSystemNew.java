@@ -198,14 +198,14 @@ public class LogisticSystemNew {
         
         
         
-       /* // check if weight exceeds capacity
+        // check if weight exceeds capacity
         if (w > vehicleCapacity[v]) {
             System.out.println("Weight exceeds vehicle capacity!");
             return;
         }
         
         
-        //calculations
+        /*//calculations
         double cost = dist * ratePerKm[v] * (1 + (w / 10000.0));
         double time = dist / avgSpeed[v];
         double fuelUsed = dist / efficiency[v];
