@@ -11,17 +11,16 @@ import java.util.*;
  * @author INDUWARI ADITHYA
  */
 public class LogisticSystemNew {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-    // TODO code application logic here
     
     // Commit 2: Define constants and arrays for cities and deliveries
     static final int MAX_CITIES = 30;
     static final int MAX_DELIVERIES = 50;
     static final double FUEL_PRICE = 310.0;
+    
+
+   
+    public static void main(String[] args) {
+    
         
     }
     
