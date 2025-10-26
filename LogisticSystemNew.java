@@ -33,6 +33,11 @@ public class LogisticSystemNew {
     static String[] fromCity = new String[MAX_DELIVERIES];
     static String[] toCity = new String[MAX_DELIVERIES];
     
+    static int[] distanceCovered = new int[MAX_DELIVERIES];
+    static double[] deliveryTime = new double[MAX_DELIVERIES];
+    static double[] charge = new double[MAX_DELIVERIES];
+
+    
     
     static int deliveryCount = 0;
     static double totalRevenue = 0;
@@ -259,11 +264,11 @@ public class LogisticSystemNew {
         if (deliveryCount < MAX_DELIVERIES) {
             fromCity[deliveryCount] = cities[src];
             toCity[deliveryCount] = cities[dest];
-            int[] distanceCovered = null;
+           
             distanceCovered[deliveryCount] = dist;
-            double[] deliveryTime = null;
+          
             deliveryTime[deliveryCount] = time;
-            double[] charge = null;
+            
             charge[deliveryCount] = chargeAmount;
             deliveryCount++;
         }
@@ -350,9 +355,8 @@ public class LogisticSystemNew {
         try (PrintWriter pw = new PrintWriter(new FileWriter("deliveries.txt"))) {
             pw.println(deliveryCount);
             for (int i = 0; i < deliveryCount; i++) {
-                boolean[] charge = null;
-                String[] distanceCovered = null;
-                String[] deliveryTime = null;
+                
+                
                 pw.println(fromCity[i] + "," + toCity[i] + "," + distanceCovered[i] + "," +
                            deliveryTime[i] + "," + charge[i]);
             }
